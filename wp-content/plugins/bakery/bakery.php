@@ -1,39 +1,49 @@
 <?php
-
-/**
- * Plugin Name:       Bakery
- * Plugin URI:        
- * Description:       My Plugin description
- * Version:           1.0.0
- * Author:            Vicente Scópise
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+/*
+ * Plugin Name: Bakery
+ * Description: Personalizacion para la panedira
+ * Version: 1.0.0
+ * Author: Workshop
+ * License: GPLv2 or later
+ * Text Domain: buddyforms
+ *****************************************************************************
+ *
+ * This script is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ ****************************************************************************
  */
 
-// If this file is called directly, abort.
-if (!defined('WPINC')) {
-    die;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-if (!class_exists('PXE_Bakery')) :
+class Bakery {
 
-    class PXE_Bakery
-    {
-        protected static $instance = NULL;
+	protected static $instance = null;
 
-        public static function get_instance()
-        {
-            if (null === self::$instance) {
-                self::$instance = new self;
-            }
-            return self::$instance;
-        }
+	public function __construct() {
+		//vicente
+	}
 
-        public function __construct()
-        {
-        }
-    }
+	public static function get_instance() {
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
 
-    $PXE_Bakery = new PXE_Bakery;
+		return self::$instance;
+	}
+}
 
-endif;
+Bakery::get_instance();
