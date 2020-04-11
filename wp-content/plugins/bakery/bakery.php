@@ -34,7 +34,7 @@ class Bakery {
 	protected static $instance = null;
 
 	public function __construct() {
-
+		//vicente
 	}
 
 	public static function get_instance() {
